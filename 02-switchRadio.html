@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>انتخاب نوع ارسال</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      margin: 40px;
+    }
+    .option {
+      margin-bottom: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>نوع ارسال سفارش را انتخاب کنید</h2>
+
+  <div class="option">
+    <input type="radio" name="shipping" value="0" onclick="updateShipping(this.value)">
+    ارسال معمولی (رایگان)
+  </div>
+  <div class="option">
+    <input type="radio" name="shipping" value="20000" onclick="updateShipping(this.value)">
+    ارسال سریع (۲۰٬۰۰۰ تومان)
+  </div>
+  <div class="option">
+    <input type="radio" name="shipping" value="50000" onclick="updateShipping(this.value)">
+    ارسال ویژه (۵۰٬۰۰۰ تومان)
+  </div>
+
+  <div id="result">هزینه ارسال: ۰ تومان</div>
+
+  <script>
+    function updateShipping(val) {
+      let result = document.getElementById("result");
+
+      switch (val) {
+        case "0":
+          result.innerHTML = "هزینه ارسال: ۰ تومان";
+          break;
+        case "20000":
+          result.innerHTML = "هزینه ارسال: ۲۰٬۰۰۰ تومان";
+          break;
+        case "50000":
+          result.innerHTML = "هزینه ارسال: ۵۰٬۰۰۰ تومان";
+          break;
+        default:
+          result.innerHTML = "لطفاً یک گزینه را انتخاب کنید.";
+      }
+    }
+  </script>
+
+</body>
+</html>
